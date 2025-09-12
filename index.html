@@ -207,8 +207,15 @@
             document.getElementById(tabName + '-tab').classList.add('active');
             
             // Add active class to clicked button
-            if (event && event.target) {
-                event.target.classList.add('active');
+            if (event) {
+                // Find the actual button element (in case user clicked on SVG or span inside)
+                let targetButton = event.target;
+                while (targetButton && !targetButton.classList.contains('tab-btn')) {
+                    targetButton = targetButton.parentElement;
+                }
+                if (targetButton && targetButton.classList.contains('tab-btn')) {
+                    targetButton.classList.add('active');
+                }
             }
         }
 
