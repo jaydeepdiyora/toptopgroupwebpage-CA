@@ -12,21 +12,21 @@ class DocumentManager {
                         title: 'Lease Agreement',
                         description: 'Your current lease terms and conditions',
                         filename: 'lease-agreement.pdf',
-                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                        fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
                     },
                     {
                         id: 'property-rules',
                         title: 'Property Rules',
                         description: 'Community guidelines and regulations',
                         filename: 'property-rules.pdf',
-                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                        fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
                     },
                     {
                         id: 'parking-agreement',
                         title: 'Parking Agreement',
                         description: 'Parking space assignment and rules',
                         filename: 'parking-agreement.pdf',
-                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                        fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
                     }
                 ]
             },
@@ -40,21 +40,21 @@ class DocumentManager {
                         title: 'Maintenance Request Form',
                         description: 'Printable form for maintenance requests',
                         filename: 'maintenance-form.pdf',
-                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                        fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
                     },
                     {
                         id: 'emergency-procedures',
                         title: 'Emergency Procedures',
                         description: 'What to do in case of emergencies',
                         filename: 'emergency-procedures.pdf',
-                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                        fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
                     },
                     {
                         id: 'utilities-info',
                         title: 'Utility Information',
                         description: 'Contact info for utilities and services',
                         filename: 'utilities-info.pdf',
-                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                        fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
                     }
                 ]
             },
@@ -68,21 +68,21 @@ class DocumentManager {
                         title: 'Move-out Checklist',
                         description: 'Requirements for moving out',
                         filename: 'moveout-checklist.pdf',
-                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                        fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
                     },
                     {
                         id: 'inspection-guidelines',
                         title: 'Inspection Guidelines',
                         description: 'What to expect during inspections',
                         filename: 'inspection-guidelines.pdf',
-                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                        fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
                     },
                     {
                         id: 'tenant-handbook',
                         title: 'Tenant Handbook',
                         description: 'Complete guide for tenants',
                         filename: 'tenant-handbook.pdf',
-                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                        fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
                     }
                 ]
             }
