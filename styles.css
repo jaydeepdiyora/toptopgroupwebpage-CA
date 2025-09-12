@@ -391,7 +391,7 @@ body {
   position: relative;
 }
 
-.contact-section::before {
+/* .contact-section::before {
   content: '';
   position: absolute;
   top: -2rem;
@@ -399,7 +399,7 @@ body {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, hsl(210, 15%, 90%), transparent);
-}
+} */
 
 .form-header {
   text-align: center;
@@ -475,7 +475,7 @@ body {
   position: relative;
 }
 
-.documents-section::before {
+/* .documents-section::before {
   content: '';
   position: absolute;
   top: -2rem;
@@ -483,7 +483,7 @@ body {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, hsl(210, 15%, 90%), transparent);
-}
+} */
 
 .documents-header {
   text-align: center;
