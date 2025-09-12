@@ -1,0 +1,322 @@
+// Document Management System
+class DocumentManager {
+    constructor() {
+        this.documentsData = {
+            'lease-legal': {
+                title: 'Lease & Legal',
+                icon: "<img src='assets/agreement.svg'  alt='Tenant Portal Maintenance & Safety'>",
+                description: 'Important documents in this category',
+                documents: [
+                    {
+                        id: 'lease-agreement',
+                        title: 'Lease Agreement',
+                        description: 'Your current lease terms and conditions',
+                        filename: 'lease-agreement.pdf',
+                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                    },
+                    {
+                        id: 'property-rules',
+                        title: 'Property Rules',
+                        description: 'Community guidelines and regulations',
+                        filename: 'property-rules.pdf',
+                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                    },
+                    {
+                        id: 'parking-agreement',
+                        title: 'Parking Agreement',
+                        description: 'Parking space assignment and rules',
+                        filename: 'parking-agreement.pdf',
+                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                    }
+                ]
+            },
+            'maintenance-safety': {
+                title: 'Maintenance & Safety',
+                icon: "<img src='assets/maintenance.svg'  alt='Tenant Portal Maintenance & Safety'>",
+                description: 'Important documents in this category',
+                documents: [
+                    {
+                        id: 'maintenance-form',
+                        title: 'Maintenance Request Form',
+                        description: 'Printable form for maintenance requests',
+                        filename: 'maintenance-form.pdf',
+                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                    },
+                    {
+                        id: 'emergency-procedures',
+                        title: 'Emergency Procedures',
+                        description: 'What to do in case of emergencies',
+                        filename: 'emergency-procedures.pdf',
+                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                    },
+                    {
+                        id: 'utilities-info',
+                        title: 'Utility Information',
+                        description: 'Contact info for utilities and services',
+                        filename: 'utilities-info.pdf',
+                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                    }
+                ]
+            },
+            'important-notices': {
+                title: 'Important Notices',
+                icon: "<img src='assets/important.svg'  alt='Tenant Portal Important Notices'>",
+                description: 'Important documents in this category',
+                documents: [
+                    {
+                        id: 'moveout-checklist',
+                        title: 'Move-out Checklist',
+                        description: 'Requirements for moving out',
+                        filename: 'moveout-checklist.pdf',
+                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                    },
+                    {
+                        id: 'inspection-guidelines',
+                        title: 'Inspection Guidelines',
+                        description: 'What to expect during inspections',
+                        filename: 'inspection-guidelines.pdf',
+                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                    },
+                    {
+                        id: 'tenant-handbook',
+                        title: 'Tenant Handbook',
+                        description: 'Complete guide for tenants',
+                        filename: 'tenant-handbook.pdf',
+                        fileId: '1dO29FqCNSf_SqJu3xCKujhNvUPbB6uGy'
+                    }
+                ]
+            }
+        };
+    }
+
+    // Render all document categories
+    renderDocuments() {
+        const container = document.querySelector('#documents-tab .space-y-8');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        Object.entries(this.documentsData).forEach(([categoryId, category]) => {
+            const categoryElement = this.createCategoryElement(categoryId, category);
+            container.appendChild(categoryElement);
+        });
+    }
+
+    // Create a document category element
+    createCategoryElement(categoryId, category) {
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'card';
+        categoryDiv.setAttribute('data-category', categoryId);
+
+        categoryDiv.innerHTML = `
+            <div class="card-header">
+                <h3 class="card-title document-title">
+                    ${category.icon}
+                    ${category.title}
+                </h3>
+                <p class="card-description">${category.description}</p>
+            </div>
+            <div class="card-content">
+                <div class="space-y-4">
+                    ${category.documents.map(doc => this.createDocumentHTML(doc)).join('')}
+                </div>
+            </div>
+        `;
+
+        return categoryDiv;
+    }
+
+    // Create HTML for a single document
+    createDocumentHTML(document) {
+        return `
+            <div class="document-item" data-document-id="${document.id}">
+                <div class="document-info">
+                    <div class="document-icon">
+                        <img src="assets/document.svg" alt="Tenant Portal File Icon">
+                    </div>
+                    <div class="document-details">
+                        <h4>${document.title}</h4>
+                        <p>${document.description}</p>
+                    </div>
+                </div>
+                <button class="btn btn-outline" onclick="documentManager.downloadDocument('${document.fileId}', '${document.filename}', '${document.title}')">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7,10 12,15 17,10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download
+                </button>
+            </div>
+        `;
+    }
+
+    // Add a new document to a category
+    addDocument(categoryId, document) {
+        if (this.documentsData[categoryId]) {
+            this.documentsData[categoryId].documents.push(document);
+            this.renderDocuments();
+        }
+    }
+
+    // Remove a document from a category
+    removeDocument(categoryId, documentId) {
+        if (this.documentsData[categoryId]) {
+            this.documentsData[categoryId].documents = this.documentsData[categoryId].documents.filter(
+                doc => doc.id !== documentId
+            );
+            this.renderDocuments();
+        }
+    }
+
+    // Add a new category
+    addCategory(categoryId, categoryData) {
+        this.documentsData[categoryId] = categoryData;
+        this.renderDocuments();
+    }
+
+    // Remove a category
+    removeCategory(categoryId) {
+        delete this.documentsData[categoryId];
+        this.renderDocuments();
+    }
+
+    // Update document details
+    updateDocument(categoryId, documentId, updates) {
+        if (this.documentsData[categoryId]) {
+            const document = this.documentsData[categoryId].documents.find(doc => doc.id === documentId);
+            if (document) {
+                Object.assign(document, updates);
+                this.renderDocuments();
+            }
+        }
+    }
+
+    // Search documents
+    searchDocuments(query) {
+        const results = [];
+        const searchTerm = query.toLowerCase();
+
+        Object.entries(this.documentsData).forEach(([categoryId, category]) => {
+            category.documents.forEach(document => {
+                if (document.title.toLowerCase().includes(searchTerm) || 
+                    document.description.toLowerCase().includes(searchTerm)) {
+                    results.push({
+                        categoryId,
+                        categoryTitle: category.title,
+                        document
+                    });
+                }
+            });
+        });
+
+        return results;
+    }
+
+    // Filter documents by category
+    filterByCategory(categoryId) {
+        return this.documentsData[categoryId] || null;
+    }
+
+    // Get all documents count
+    getTotalDocumentsCount() {
+        return Object.values(this.documentsData).reduce((total, category) => {
+            return total + category.documents.length;
+        }, 0);
+    }
+
+    // Download document from Google Drive
+    downloadDocument(fileId, filename, documentName) {
+        console.log(`Downloading: ${filename}`);        
+        if (fileId) {
+            // Convert Google Drive share URL to direct download URL
+            const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+            
+            // Show download notification
+            this.showNotification(`Download started for: ${documentName}`, 'success');
+            
+            // Create a temporary anchor element to trigger download
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.download = filename;
+            link.target = '_blank';
+            
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show success notification after a delay
+            // setTimeout(() => {
+            //     this.showNotification(`${documentName} download initiated!`, 'success');
+            // }, 500);
+        } else {
+            // Fallback for files not mapped to Google Drive
+            this.showNotification(`File not found: ${documentName}`, 'error');
+            console.warn(`No Google Drive file ID found for: ${filename}`);
+        }
+    }
+
+    // Show notification
+    showNotification(message, type = 'info') {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        
+        // Style the notification
+        Object.assign(notification.style, {
+            position: 'fixed',
+            top: '20px',
+            right: '20px',
+            padding: '1rem 1.5rem',
+            borderRadius: '0.5rem',
+            color: 'white',
+            backgroundColor: type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6',
+            zIndex: '9999',
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+            transform: 'translateX(100%)',
+            transition: 'transform 0.3s ease'
+        });
+
+        document.body.appendChild(notification);
+
+        // Animate in
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+
+        // Remove after 3 seconds
+        setTimeout(() => {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }, 3000);
+    }
+
+    // Initialize the document manager
+    init() {
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                this.renderDocuments();
+            });
+        } else {
+            this.renderDocuments();
+        }
+    }
+}
+
+// Create global instance
+const documentManager = new DocumentManager();
+
+// Initialize when script loads
+documentManager.init();
+
+// Export for use in other scripts if needed
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = DocumentManager;
+}
