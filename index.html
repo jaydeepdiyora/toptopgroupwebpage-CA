@@ -1,265 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tenant Portal - Your Property Management Hub</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-brand">
-                    <div class="hero-logo">
-                        <img src="assets/logo.svg" alt="Tenant Portal Logo">
-                    </div>
-                    <h1>Tenant Portal</h1>
-                </div>
-                <p>Your comprehensive property management hub. Access documents, submit requests, and stay connected with your property management team - all in one convenient location.</p>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-brand">
+            <div class="hero-logo">
+              <img src="assets/logo.svg" alt="Tenant Portal Logo" />
             </div>
+            <h1>Tenant Portal</h1>
+          </div>
+          <p>
+            Your comprehensive property management hub. Access documents, submit requests, and stay
+            connected with your property management team - all in one convenient location.
+          </p>
         </div>
+      </div>
     </section>
 
     <!-- Tab Navigation -->
     <section class="tab-section">
-        <div class="tab-navigation">
-            <button class="tab-btn active" onclick="showTab('contact', event)">
-                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.1819 1.5H5.68188C3.47275 1.5 1.68188 3.29086 1.68188 5.5V14.5C1.68188 16.7091 3.47275 18.5 5.68188 18.5H16.1819C18.391 18.5 20.1819 16.7091 20.1819 14.5V5.5C20.1819 3.29086 18.391 1.5 16.1819 1.5Z" stroke="currentColor" stroke-width="2"/>
-                    <path d="M1.729 5.59009L8.934 9.72009C9.53778 10.0704 10.2234 10.255 10.9215 10.255C11.6196 10.255 12.3052 10.0704 12.909 9.72009L20.134 5.59009" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>Send Message</span>
-            </button>
-            <button class="tab-btn" onclick="showTab('documents', event)">
-                <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 7C1 4.172 1 2.757 1.879 1.879C2.757 1 4.172 1 7 1H9C11.828 1 13.243 1 14.121 1.879C15 2.757 15 4.172 15 7V15C15 17.828 15 19.243 14.121 20.121C13.243 21 11.828 21 9 21H7C4.172 21 2.757 21 1.879 20.121C1 19.243 1 17.828 1 15V7Z" stroke="currentColor" stroke-width="2"/>
-                    <path d="M5 12H11M5 8H11M5 16H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>                    
-                <span>View Documents</span>
-            </button>
-        </div>
-        
-        <div class="container">
-            <div class="tab-content-wrapper">
-                <!-- Contact Tab Content -->
-                <div id="contact-tab" class="tab-content active">
-                    <div class="tab-inner">
-                        <div class="contact-section">
-                            <div class="form-header">
-                                <h3>
-                                    <img src="assets/email.svg"  alt="Tenant Portal Logo">
-                                    Send us a Message
-                                </h3>
-                                <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-                            </div>
-                            
-                            <div class="contact-form-wrapper">
-                                <form id="contactForm" class="contact-form">
-                                    <div class="form-grid">
-                                        <div class="form-group">
-                                            <label for="name" class="form-label">Full Name</label>
-                                            <input type="text" id="name" name="name" class="form-input" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email" class="form-label">Email Address</label>
-                                            <input type="email" id="email" name="email" class="form-input" required>
-                                        </div>
-                                    </div>
+      <div class="tab-navigation">
+        <button class="tab-btn active" onclick="showTab('contact', event)">
+          <svg
+            width="22"
+            height="20"
+            viewBox="0 0 22 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.1819 1.5H5.68188C3.47275 1.5 1.68188 3.29086 1.68188 5.5V14.5C1.68188 16.7091 3.47275 18.5 5.68188 18.5H16.1819C18.391 18.5 20.1819 16.7091 20.1819 14.5V5.5C20.1819 3.29086 18.391 1.5 16.1819 1.5Z"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <path
+              d="M1.729 5.59009L8.934 9.72009C9.53778 10.0704 10.2234 10.255 10.9215 10.255C11.6196 10.255 12.3052 10.0704 12.909 9.72009L20.134 5.59009"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span>Send Message</span>
+        </button>
+        <button class="tab-btn" onclick="showTab('documents', event)">
+          <svg
+            width="16"
+            height="22"
+            viewBox="0 0 16 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 7C1 4.172 1 2.757 1.879 1.879C2.757 1 4.172 1 7 1H9C11.828 1 13.243 1 14.121 1.879C15 2.757 15 4.172 15 7V15C15 17.828 15 19.243 14.121 20.121C13.243 21 11.828 21 9 21H7C4.172 21 2.757 21 1.879 20.121C1 19.243 1 17.828 1 15V7Z"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <path
+              d="M5 12H11M5 8H11M5 16H8"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span>View Documents</span>
+        </button>
+      </div>
 
-                                    <div class="form-group">
-                                        <label for="topic" class="form-label">Topic</label>
-                                        <select id="topic" name="topic" class="form-select" required>
-                                            <option value="">Select a topic</option>
-                                            <option value="maintenance">Maintenance Request</option>
-                                            <option value="rent">Rent & Payment</option>
-                                            <option value="emergency">Emergency</option>
-                                            <option value="general">General Inquiry</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="message" class="form-label">Message</label>
-                                        <textarea id="message" name="message" class="form-textarea" placeholder="Please describe your request or inquiry..." required></textarea>
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary btn-full btn-lg">
-                                            <img src="assets/send.svg" alt="Tenant Portal Send Message">
-                                            Send Message
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container">
+        <div class="tab-content-wrapper">
+          <!-- Contact Tab Content -->
+          <div id="contact-tab" class="tab-content active">
+            <div class="tab-inner">
+              <div class="contact-section">
+                <div class="form-header">
+                  <h3>
+                    <img src="assets/email.svg" alt="Tenant Portal Logo" />
+                    Send us a Message
+                  </h3>
+                  <p>Fill out the form below and we'll get back to you as soon as possible.</p>
                 </div>
 
-                <!-- Documents Tab Content -->
-                <div id="documents-tab" class="tab-content">
-                    <div class="tab-inner">
-                        <div class="documents-section">
-                            <div class="documents-header">
-                                <h3>
-                                    <img src="assets/doc.svg"  alt="Tenant Portal Doc">
-                                    Your Documents
-                                </h3>
-                                <p>Access and download your important property documents</p>
-                            </div>
-                            
-                            <div class="documents-grid">
-                                <!-- Documents will be dynamically loaded here -->
-                            </div>
-                        </div>
+                <div class="contact-form-wrapper">
+                  <form id="contactForm" class="contact-form">
+                    <div class="form-grid">
+                      <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required />
+                      </div>
+                      <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" required />
+                      </div>
                     </div>
+
+                    <div class="form-group">
+                      <label for="topic" class="form-label">Topic</label>
+                      <select id="topic" name="topic" class="form-select" required>
+                        <option value="">Select a topic</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="maintenance">Maintenance Request</option>
+                        <option value="complaint">Tenant Incident Complaint</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="message" class="form-label">Message</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        class="form-textarea"
+                        placeholder="Please describe your request or inquiry..."
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary btn-full btn-lg">
+                        <img src="assets/send.svg" alt="Tenant Portal Send Message" />
+                        Send Message
+                      </button>
+                    </div>
+                  </form>
                 </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Documents Tab Content -->
+          <div id="documents-tab" class="tab-content">
+            <div class="tab-inner">
+              <div class="documents-section">
+                <div class="documents-header">
+                  <h3>
+                    <img src="assets/doc.svg" alt="Tenant Portal Doc" />
+                    Your Documents
+                  </h3>
+                  <p>Access and download your important property documents</p>
+                </div>
+
+                <div class="documents-grid">
+                  <!-- Documents will be dynamically loaded here -->
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
-        <div class="container">
-            <div class="features-header">
-                <h2>How We Can Help</h2>
-                <p class="text-muted">Everything you need to manage your tenancy in one convenient location</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="assets/bubble-chat.svg"  alt="Tenant Portal Easy Communication">
-                    </div>
-                    <h3>Easy Communication</h3>
-                    <p>Send messages directly to your property management team with our organized contact system</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="assets/document.svg"  alt="Tenant Portal Document Access">
-                    </div>
-                    <h3>Document Access</h3>
-                    <p>Download your lease, property rules, and other important documents anytime, anywhere</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="assets/quick-response.svg"  alt="Tenant Portal Quick Response">
-                    </div>
-                    <h3>Quick Response</h3>
-                    <p>We aim to respond to all inquiries within 24 hours during business days</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="features-header">
+          <h2>How We Can Help</h2>
+          <p class="text-muted">
+            Everything you need to manage your tenancy in one convenient location
+          </p>
         </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="assets/bubble-chat.svg" alt="Tenant Portal Easy Communication" />
+            </div>
+            <h3>Easy Communication</h3>
+            <p>
+              Send messages directly to your property management team with our organized contact
+              system
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="assets/document.svg" alt="Tenant Portal Document Access" />
+            </div>
+            <h3>Document Access</h3>
+            <p>
+              Download your lease, property rules, and other important documents anytime, anywhere
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="assets/quick-response.svg" alt="Tenant Portal Quick Response" />
+            </div>
+            <h3>Quick Response</h3>
+            <p>We aim to respond to all inquiries within 24 hours during business days</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="assets/property.svg"  alt="Tenant Portal Professional Property Management">
-                        <!-- <svg class="icon text-primary" viewBox="0 0 24 24" aria-hidden="true">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="assets/property.svg" alt="Tenant Portal Professional Property Management" />
+              <!-- <svg class="icon text-primary" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
                         </svg> -->
-                    </div>
-                    <div class="footer-info">
-                        <h3>Professional Property Management</h3>
-                        <p>Your satisfaction is our priority. We're committed to providing excellent service and maintaining a safe, comfortable living environment.</p>
-                    </div>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Emergency Contact</h4>
-                    <p class="emergency-phone">(555) 123-4567</p>
-                    <p class="emergency-note">Available 24/7 for emergencies</p>
-                </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Tenant Portal. All rights reserved.</p>
+            <div class="footer-info">
+              <h3>Professional Property Management</h3>
+              <p>
+                Your satisfaction is our priority. We're committed to providing excellent service
+                and maintaining a safe, comfortable living environment.
+              </p>
             </div>
+          </div>
+
+          <div class="footer-contact">
+            <h4>Emergency Contact</h4>
+            <p class="emergency-phone">(310) 692-1969</p>
+            <p class="emergency-note">Available 24/7 for emergencies</p>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 Tenant Portal. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="documents.js"></script>
-    
+
     <script>
-        // Tab switching functionality
-        function showTab(tabName, event) {
-            // Hide all tab contents
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            // Remove active class from all tab buttons
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            tabButtons.forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Show selected tab content
-            document.getElementById(tabName + '-tab').classList.add('active');
-            
-            // Add active class to clicked button
-            if (event) {
-                // Find the actual button element (in case user clicked on SVG or span inside)
-                let targetButton = event.target;
-                while (targetButton && !targetButton.classList.contains('tab-btn')) {
-                    targetButton = targetButton.parentElement;
-                }
-                if (targetButton && targetButton.classList.contains('tab-btn')) {
-                    targetButton.classList.add('active');
-                }
-            }
+      // Tab switching functionality
+      function showTab(tabName, event) {
+        // Hide all tab contents
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabContents.forEach((content) => {
+          content.classList.remove('active');
+        });
+
+        // Remove active class from all tab buttons
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        tabButtons.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+
+        // Show selected tab content
+        document.getElementById(tabName + '-tab').classList.add('active');
+
+        // Add active class to clicked button
+        if (event) {
+          // Find the actual button element (in case user clicked on SVG or span inside)
+          let targetButton = event.target;
+          while (targetButton && !targetButton.classList.contains('tab-btn')) {
+            targetButton = targetButton.parentElement;
+          }
+          if (targetButton && targetButton.classList.contains('tab-btn')) {
+            targetButton.classList.add('active');
+          }
         }
+      }
 
-        // Contact form functionality
-        function initContactForm() {
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Get form data
-                    const formData = new FormData(this);
-                    const data = Object.fromEntries(formData);
-                    
-                    // Show loading state
-                    const submitBtn = this.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.innerHTML;
-                    submitBtn.innerHTML = '<svg class="icon animate-spin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"></circle><path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" opacity="0.75"></path></svg>Sending...';
-                    submitBtn.disabled = true;
+      // Contact form functionality
+      function initContactForm() {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+          contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-                    // Simulate API call
-                    setTimeout(() => {
-                        // Show success message
-                        showNotification('Message sent! We\'ve received your message and will respond within 24 hours.', 'success');
-                        
-                        // Reset form and button
-                        this.reset();
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-                    }, 1500);
-                });
-            }
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML =
+              '<svg class="icon animate-spin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"></circle><path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" opacity="0.75"></path></svg>Sending...';
+            submitBtn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+              // Show success message
+              showNotification(
+                "Message sent! We've received your message and will respond within 24 hours.",
+                'success'
+              );
+
+              // Reset form and button
+              this.reset();
+              submitBtn.innerHTML = originalText;
+              submitBtn.disabled = false;
+            }, 1500);
+          });
         }
+      }
 
-        // Notification system
-        function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `notification notification-${type}`;
-            notification.innerHTML = `
+      // Notification system
+      function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
                 <div class="notification-content">
                     <svg class="notification-icon" viewBox="0 0 24 24">
-                        ${type === 'success' ? '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>' : 
-                          type === 'error' ? '<path d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>' :
-                          '<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>'}
+                        ${
+                          type === 'success'
+                            ? '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+                            : type === 'error'
+                            ? '<path d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+                            : '<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+                        }
                     </svg>
                     <span>${message}</span>
                 </div>
@@ -267,71 +328,72 @@
                     <svg viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             `;
-            
-            // Style the notification
-            Object.assign(notification.style, {
-                position: 'fixed',
-                top: '20px',
-                right: '20px',
-                padding: '1rem',
-                borderRadius: '0.75rem',
-                color: 'white',
-                backgroundColor: type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6',
-                zIndex: '9999',
-                boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
-                transform: 'translateX(100%)',
-                transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                maxWidth: '400px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.75rem'
-            });
 
-            document.body.appendChild(notification);
-
-            // Animate in
-            setTimeout(() => {
-                notification.style.transform = 'translateX(0)';
-            }, 100);
-
-            // Auto remove after 5 seconds
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.style.transform = 'translateX(100%)';
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            notification.parentNode.removeChild(notification);
-                        }
-                    }, 300);
-                }
-            }, 5000);
-        }
-
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize contact form
-            initContactForm();
-            
-            // Initialize document manager (if available)
-            if (typeof documentManager !== 'undefined') {
-                // Update document manager to use new container
-                const originalRender = documentManager.renderDocuments;
-                documentManager.renderDocuments = function() {
-                    const container = document.querySelector('.documents-grid');
-                    if (!container) return;
-
-                    container.innerHTML = '';
-
-                    Object.entries(this.documentsData).forEach(([categoryId, category]) => {
-                        const categoryElement = this.createCategoryElement(categoryId, category);
-                        container.appendChild(categoryElement);
-                    });
-                };
-                
-                // Re-render documents with new container
-                documentManager.renderDocuments();
-            }
+        // Style the notification
+        Object.assign(notification.style, {
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          padding: '1rem',
+          borderRadius: '0.75rem',
+          color: 'white',
+          backgroundColor:
+            type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6',
+          zIndex: '9999',
+          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
+          transform: 'translateX(100%)',
+          transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          maxWidth: '400px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.75rem',
         });
+
+        document.body.appendChild(notification);
+
+        // Animate in
+        setTimeout(() => {
+          notification.style.transform = 'translateX(0)';
+        }, 100);
+
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+              if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+              }
+            }, 300);
+          }
+        }, 5000);
+      }
+
+      // Initialize everything when DOM is loaded
+      document.addEventListener('DOMContentLoaded', function () {
+        // Initialize contact form
+        initContactForm();
+
+        // Initialize document manager (if available)
+        if (typeof documentManager !== 'undefined') {
+          // Update document manager to use new container
+          const originalRender = documentManager.renderDocuments;
+          documentManager.renderDocuments = function () {
+            const container = document.querySelector('.documents-grid');
+            if (!container) return;
+
+            container.innerHTML = '';
+
+            Object.entries(this.documentsData).forEach(([categoryId, category]) => {
+              const categoryElement = this.createCategoryElement(categoryId, category);
+              container.appendChild(categoryElement);
+            });
+          };
+
+          // Re-render documents with new container
+          documentManager.renderDocuments();
+        }
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -943,9 +943,9 @@ body {
   width: 4px;
 }
 
-.documents-grid .document-item:last-child {
+/* .documents-grid .document-item:last-child {
   border-bottom: none;
-}
+} */
 
 @media (max-width: 640px) {
   .documents-grid .card-header {
@@ -1305,9 +1305,9 @@ body {
   transition: width 0.3s ease;
 }
 
-.tab-content .document-item:last-child {
+/* .tab-content .document-item:last-child {
   border-bottom: none;
-}
+} */
 
 .tab-content .document-item:hover {
   background: rgba(hsl(210, 85%, 58%), 0.03);
@@ -1633,9 +1633,9 @@ body {
 }
 
 .tab-content .card:not(:last-child) {
-  border-bottom: 2px solid hsl(210, 15%, 92%);
-  margin-bottom: 2.5rem;
-  padding-bottom: 2.5rem;
+  /* border-bottom: 2px solid hsl(210, 15%, 92%); */
+  /* margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem; */
   position: relative;
 }
 
