@@ -96,7 +96,12 @@
                 </div>
 
                 <div class="contact-form-wrapper">
-                  <form id="contactForm" class="contact-form">
+                  <form
+                    id="contactForm"
+                    class="contact-form"
+                    action="https://formspree.io/f/xdklvlnr"
+                    method="POST"
+                  >
                     <div class="form-grid">
                       <div class="form-group">
                         <label for="name" class="form-label">Full Name</label>
@@ -111,7 +116,7 @@
                     <div class="form-group">
                       <label for="topic" class="form-label">Topic</label>
                       <select id="topic" name="topic" class="form-select" required>
-                        <option value="">Select a topic</option>
+                        <option value="" disabled selected>Select a topic</option>
                         <option value="general">General Inquiry</option>
                         <option value="maintenance">Maintenance Request</option>
                         <option value="complaint">Tenant Incident Complaint</option>
@@ -277,11 +282,8 @@
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
           contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
             // Get form data
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
 
             // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
@@ -290,19 +292,42 @@
               '<svg class="icon animate-spin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"></circle><path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" opacity="0.75"></path></svg>Sending...';
             submitBtn.disabled = true;
 
-            // Simulate API call
-            setTimeout(() => {
-              // Show success message
+            // Submit to Formspree
+            fetch(this.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            })
+            .then(response => {
+              if (response.ok) {
+                // Show success message
+                showNotification(
+                  "Message sent! We've received your message and will respond within 24 hours.",
+                  'success'
+                );
+                // Reset form
+                this.reset();
+              } else {
+                throw new Error('Form submission failed');
+              }
+            })
+            .catch(error => {
+              // Show error message
               showNotification(
-                "Message sent! We've received your message and will respond within 24 hours.",
-                'success'
+                "Sorry, there was an error sending your message. Please try again.",
+                'error'
               );
-
-              // Reset form and button
-              this.reset();
+            })
+            .finally(() => {
+              // Reset button state
               submitBtn.innerHTML = originalText;
               submitBtn.disabled = false;
-            }, 1500);
+            });
+
+            // Prevent default form submission since we're handling it with fetch
+            e.preventDefault();
           });
         }
       }

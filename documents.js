@@ -58,88 +58,6 @@ class DocumentManager {
           },
         ],
       },
-      // 'lease-legal': {
-      //     title: 'Lease & Legal',
-      //     icon: "<img src='assets/agreement.svg'  alt='Tenant Portal Maintenance & Safety'>",
-      //     description: 'Important documents in this category',
-      //     documents: [
-      //         {
-      //             id: 'lease-agreement',
-      //             title: 'Lease Agreement',
-      //             description: 'Your current lease terms and conditions',
-      //             filename: 'lease-agreement.pdf',
-      //             fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
-      //         },
-      //         {
-      //             id: 'property-rules',
-      //             title: 'Property Rules',
-      //             description: 'Community guidelines and regulations',
-      //             filename: 'property-rules.pdf',
-      //             fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
-      //         },
-      //         {
-      //             id: 'parking-agreement',
-      //             title: 'Parking Agreement',
-      //             description: 'Parking space assignment and rules',
-      //             filename: 'parking-agreement.pdf',
-      //             fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
-      //         }
-      //     ]
-      // },
-      // 'maintenance-safety': {
-      //     title: 'Maintenance & Safety',
-      //     icon: "<img src='assets/maintenance.svg'  alt='Tenant Portal Maintenance & Safety'>",
-      //     description: 'Important documents in this category',
-      //     documents: [
-      //         {
-      //             id: 'maintenance-form',
-      //             title: 'Maintenance Request Form',
-      //             description: 'Printable form for maintenance requests',
-      //             filename: 'maintenance-form.pdf',
-      //             fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
-      //         },
-      //         {
-      //             id: 'emergency-procedures',
-      //             title: 'Emergency Procedures',
-      //             description: 'What to do in case of emergencies',
-      //             filename: 'emergency-procedures.pdf',
-      //             fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
-      //         },
-      //         {
-      //             id: 'utilities-info',
-      //             title: 'Utility Information',
-      //             description: 'Contact info for utilities and services',
-      //             filename: 'utilities-info.pdf',
-      //             fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
-      //         }
-      //     ]
-      // },
-      // 'important-notices': {
-      //     title: 'Important Notices',
-      //     icon: "<img src='assets/important.svg'  alt='Tenant Portal Important Notices'>",
-      //     description: 'Important documents in this category',
-      //     documents: [
-      //         {
-      //             id: 'moveout-checklist',
-      //             title: 'Move-out Checklist',
-      //             description: 'Requirements for moving out',
-      //             filename: 'moveout-checklist.pdf',
-      //             fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
-      //         },
-      //         {
-      //             id: 'inspection-guidelines',
-      //             title: 'Inspection Guidelines',
-      //             description: 'What to expect during inspections',
-      //             filename: 'inspection-guidelines.pdf',
-      //             fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
-      //         },
-      //         {
-      //             id: 'tenant-handbook',
-      //             title: 'Tenant Handbook',
-      //             description: 'Complete guide for tenants',
-      //             filename: 'tenant-handbook.pdf',
-      //             fileId: '1mKqA214BC4U140uxuFMd72bu0W_VPEKu'
-      //         }
     };
   }
 
@@ -169,22 +87,6 @@ class DocumentManager {
                 </div>
             </div>
         `;
-
-    // categoryDiv.innerHTML = `
-    //         <div class="card-header">
-    //             <h3 class="card-title document-title">
-    //                 ${category.icon}
-    //                 ${category.title}
-    //             </h3>
-    //             <p class="card-description">${category.description}</p>
-    //         </div>
-    //         <div class="card-content">
-    //             <div class="space-y-4">
-    //                 ${category.documents.map((doc) => this.createDocumentHTML(doc)).join('')}
-    //             </div>
-    //         </div>
-    //     `;
-
     return categoryDiv;
   }
 
@@ -318,48 +220,12 @@ class DocumentManager {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
-      // Show success notification after a delay
-      // setTimeout(() => {
-      //     this.showNotification(`${documentName} download initiated!`, 'success');
-      // }, 500);
     } else {
       // Fallback for files not mapped to Google Drive
       this.showNotification(`File not found: ${documentName}`, 'error');
       console.warn(`No Google Drive file ID found for: ${filename}`);
     }
   }
-
-  //   downloadDocument(fileId, filename, documentName) {
-  //     console.log(`Downloading: ${filename}`);
-  //     if (fileId) {
-  //       // Convert Google Drive share URL to direct download URL
-  //       const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-
-  //       // Show download notification
-  //       this.showNotification(`Download started for: ${documentName}`, 'success');
-
-  //       // Create a temporary anchor element to trigger download
-  //       const link = document.createElement('a');
-  //       link.href = downloadUrl;
-  //       link.download = filename;
-  //       link.target = '_blank';
-
-  //       // Append to body, click, and remove
-  //       document.body.appendChild(link);
-  //       link.click();
-  //       document.body.removeChild(link);
-
-  //       // Show success notification after a delay
-  //       // setTimeout(() => {
-  //       //     this.showNotification(`${documentName} download initiated!`, 'success');
-  //       // }, 500);
-  //     } else {
-  //       // Fallback for files not mapped to Google Drive
-  //       this.showNotification(`File not found: ${documentName}`, 'error');
-  //       console.warn(`No Google Drive file ID found for: ${filename}`);
-  //     }
-  //   }
 
   // Show notification
   showNotification(message, type = 'info') {
